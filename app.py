@@ -14,7 +14,7 @@ prompt_template = ChatPromptTemplate.from_messages([
 ])
 
 # Initialize the OpenAI LLM
-llm = ChatOpenAI(model_name='gpt-3.5-turbo', temperature=0.9)
+llm = ChatOpenAI(model_name='gpt-4', temperature=0.9)
 
 # LLMChain initialization with the prompt template and llm model
 chain = LLMChain(llm=llm, prompt=prompt_template)
@@ -41,8 +41,6 @@ def translator():
                 formal_pronouns = "Use informal pronouns. E.g. \"du\" instead of \"Sie\" and \"dir\" instead of \"Ihnen\"."
         else:
             formal_pronouns = ""
-
-        print(formal_pronouns)
 
         response = chain.run({'output_language': output_language, 'input_language': input_language, 'formal_pronouns': formal_pronouns,  'text': user_input})
         return render_template("index.html", response=response, user_input=user_input)
