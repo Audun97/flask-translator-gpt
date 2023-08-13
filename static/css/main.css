@@ -1,0 +1,83 @@
+/* General styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #222;
+    color: #fff;
+    margin: 0;
+    padding: 0;
+  }
+  
+  h1 {
+    text-align: center;
+    margin-top: 50px;
+    font-size: 2rem;
+  }
+  
+  form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 50px;
+  }
+  
+  label {
+    margin-bottom: 10px;
+  }
+  
+  /* Select dropdown styles */
+  select {
+    background-color: #333;
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    margin-left: 5px;
+    cursor: pointer;
+  }
+  
+  select:focus {
+    outline: none;
+  }
+  
+  /* Checkbox styles */
+  #formal_pronouns_container {
+    display: flex;
+    align-items: center;
+  }
+  
+  input[type="checkbox"] {
+    appearance: none;
+    background-color: #333;
+    border: 1px solid #555;
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    margin-right: 5px;
+  }
+  
+  input[type="checkbox"]:checked {
+    background-color: #555;
+    border: 1px solid #333;
+  }
+  
+  input[type="checkbox"]:focus {
+    outline: none;
+  }
+  
+  /* Text input styles */
+  input[type="text"] {
+    background-color: #333;
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    margin-top: 10px;
+  }
+  
+  input[type="text"]:focus {
+    outline: none;
+  }
+  
+  /* Response styles */
+  p {
+    text-align: center;
+    margin-top: 50px;
+  }

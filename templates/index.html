@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Translator</title>
+    <link rel="stylesheet" href="/static/css/main.css">
+</head>
+<body>
+    <h1>Translator</h1>
+    <form method="POST">
+        <label for="input_language">Input Language:</label>
+        <select name="input_language">
+            <option value="English">English</option>
+            <option value="German">German</option>
+            <option value="Norwegian">Norwegian</option>
+        </select>
+        <label for="output_language">Output Language:</label>
+        <select name="output_language" id="output_language">
+            <option value="English">English</option>
+            <option value="German" selected>German</option>
+            <option value="Norwegian">Norwegian</option>
+        </select>
+        <div id="formal_pronouns_container">
+            <label for="formal_pronouns">Formal Pronouns:</label>
+            <input type="checkbox" name="formal_pronouns" value="1">
+        </div>
+        <br>
+        <label for="user_input">Enter your text:</label>
+        <input type="text" name="user_input" value="{{ user_input }}">
+        <br>
+    </form>
+    {% if response %}
+        <p>{{ response }}</p>
+    {% endif %}
+</body>
+</html>
+
+<script>
+    const outputLanguageSelect = document.getElementById("output_language");
+    const formalPronounsContainer = document.getElementById("formal_pronouns_container");
+
+    function updateFormalPronounsVisibility() {
+        if (outputLanguageSelect.value === "German") {
+            formalPronounsContainer.style.display = "block";
+        } else {
+            formalPronounsContainer.style.display = "none";
+        }
+    }
+
+    outputLanguageSelect.addEventListener("change", updateFormalPronounsVisibility);
+    updateFormalPronounsVisibility();
+</script>
