@@ -1,4 +1,3 @@
-import os
 from flask import Flask, render_template, request
 from langchain.prompts import ChatPromptTemplate
 from langchain.chat_models import ChatOpenAI
