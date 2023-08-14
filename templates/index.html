@@ -38,35 +38,8 @@
             <textarea name="user_output" id="user_output">{{ response }}</textarea>
         </div>
     </form>
-    <script>
-        const outputLanguageSelect = document.getElementById("output_language");
-        const formalPronounsContainer = document.getElementById("formal_pronouns_container");
-    
-        function updateFormalPronounsVisibility() {
-            if (outputLanguageSelect.value === "German") {
-                formalPronounsContainer.style.display = "block";
-            } else {
-                formalPronounsContainer.style.display = "none";
-            }
-        }
-    
-        outputLanguageSelect.addEventListener("change", updateFormalPronounsVisibility);
-        updateFormalPronounsVisibility();
-        
-    
-        function handleKeyDown(event) {
-            if (event.ctrlKey && event.key === 'Enter') {
-                event.preventDefault();
-                document.querySelector('form').submit();
-            }
-        }
-
-        window.addEventListener("DOMContentLoaded", () => {
-            const userOutput = document.getElementById("user_output");
-            if (userOutput.value) {
-                userOutput.focus();
-            }
-        });
-    </script>
+    <script src="{{ url_for('static', filename='js/updateFormalPronounsVisibility.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/ctrlEnterFormSubmission.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/focusUserOutputFormSubmission.js') }}"></script>
 </body>
 </html>
