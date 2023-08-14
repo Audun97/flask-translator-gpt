@@ -13,42 +13,52 @@
     <form method="POST">
         <div class="lang-selection">
             <div>
-                <label for="input_language">Input Language:</label>
                 <select name="input_language">
                     <option value="English">English</option>
                     <option value="German">German</option>
                     <option value="Norwegian">Norwegian</option>
                 </select>
             </div>
-            <div>
-                <label for="output_language">Output Language:</label>
+            <div style="display: flex; align-items: center;">
                 <select name="output_language" id="output_language">
                     <option value="English">English</option>
                     <option value="German" selected>German</option>
                     <option value="Norwegian">Norwegian</option>
                 </select>
+
+                <span id="formal_pronouns_container">
+                    <label for="formal_pronouns">Formal pronouns:</label>
+                    <input type="checkbox" name="formal_pronouns" id="formal_pronouns" value="1">
+                </span>
             </div>
         </div>
         <div class="text-areas">
-            <textarea name="user_input">{{ user_input }}</textarea>
-            <textarea name="user_output" readonly>{{ response }}</textarea>
+            <textarea name="user_input" onkeydown="handleKeyDown(event)">{{ user_input }}</textarea>
+            <textarea name="user_output">{{ response }}</textarea>
         </div>
     </form>
+    <script>
+        const outputLanguageSelect = document.getElementById("output_language");
+        const formalPronounsContainer = document.getElementById("formal_pronouns_container");
+    
+        function updateFormalPronounsVisibility() {
+            if (outputLanguageSelect.value === "German") {
+                formalPronounsContainer.style.display = "block";
+            } else {
+                formalPronounsContainer.style.display = "none";
+            }
+        }
+    
+        outputLanguageSelect.addEventListener("change", updateFormalPronounsVisibility);
+        updateFormalPronounsVisibility();
+        
+    
+        function handleKeyDown(event) {
+            if (event.ctrlKey && event.key === 'Enter') {
+                event.preventDefault();
+                document.querySelector('form').submit();
+            }
+        }
+    </script>
 </body>
 </html>
-
-<script>
-    const outputLanguageSelect = document.getElementById("output_language");
-    const formalPronounsContainer = document.getElementById("formal_pronouns_container");
-
-    function updateFormalPronounsVisibility() {
-        if (outputLanguageSelect.value === "German") {
-            formalPronounsContainer.style.display = "block";
-        } else {
-            formalPronounsContainer.style.display = "none";
-        }
-    }
-
-    outputLanguageSelect.addEventListener("change", updateFormalPronounsVisibility);
-    updateFormalPronounsVisibility();
-</script>
