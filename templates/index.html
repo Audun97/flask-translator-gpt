@@ -19,6 +19,7 @@
                     <option value="German">German</option>
                     <option value="Norwegian">Norwegian</option>
                 </select>
+                <input type="submit" value="Submit" id="mobile-submit" style="display: none;">
             </div>
             <div style="display: flex; align-items: center;">
                 <select name="output_language" id="output_language">
@@ -37,6 +38,7 @@
             <textarea name="user_input" onkeydown="handleKeyDown(event)" placeholder="Press Ctrl + Enter to submit" autofocus>{{ user_input }}</textarea>
             <textarea name="user_output" id="user_output">{{ response }}</textarea>
         </div>
+        <footer></footer>
     </form>
     <script src="{{ url_for('static', filename='js/updateFormalPronounsVisibility.js') }}"></script>
     <script src="{{ url_for('static', filename='js/ctrlEnterFormSubmission.js') }}"></script>

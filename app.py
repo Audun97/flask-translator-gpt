@@ -1,3 +1,4 @@
+import os
 from flask import Flask, render_template, request
 from langchain.prompts import ChatPromptTemplate
 from langchain.chat_models import ChatOpenAI
@@ -14,7 +15,7 @@ prompt_template = ChatPromptTemplate.from_messages([
 ])
 
 # Initialize the OpenAI LLM
-llm = ChatOpenAI(model_name='gpt-4', temperature=0.9)
+llm = ChatOpenAI(model_name='gpt-4', temperature=0.9, openai_api_key=os.getenv("OPENAI_API_KEY"))
 
 # LLMChain initialization with the prompt template and llm model
 chain = LLMChain(llm=llm, prompt=prompt_template)
