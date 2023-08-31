@@ -83,11 +83,11 @@ footer {
   background-color: #222;
 }
 
-#mobile-submit {
+label[for="formal_pronouns"] br {
   display: none;
 }
 
-label[for="formal_pronouns"] br {
+#mobile-submit {
   display: none;
 }
 
@@ -124,20 +124,6 @@ label[for="formal_pronouns"] br {
     display: inline;
   }
 
-  /* Add a submit button for mobile devices */
-  form::after {
-    content: 'Submit';
-    display: block;
-    width: 100%;
-    padding: 10px;
-    text-align: center;
-    background-color: #333;
-    color: #fff;
-    cursor: pointer;
-    margin-top: 20px;
-    border: none;
-    transition: background-color 0.3s;
-  }
 
   form::after:hover {
     background-color: #444;
