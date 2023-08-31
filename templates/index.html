@@ -9,7 +9,6 @@
 <body>
     <header>
         <img src="{{ url_for('static', filename='img/logo.svg') }}" alt="Your Logo" id="logo">
-        <h1>Translator</h1>
     </header>
     <form method="POST">
         <div class="lang-selection">
@@ -19,25 +18,25 @@
                     <option value="German">German</option>
                     <option value="Norwegian">Norwegian</option>
                 </select>
-                <input type="submit" value="Submit" id="mobile-submit" style="display: none;">
             </div>
-            <div style="display: flex; align-items: center;">
+            <div>
                 <select name="output_language" id="output_language">
                     <option value="English">English</option>
                     <option value="German" selected>German</option>
                     <option value="Norwegian">Norwegian</option>
                 </select>
 
-                <span id="formal_pronouns_container">
-                    <label for="formal_pronouns">Formal pronouns</label>
+                <div id="formal_pronouns_container">
+                    <label for="formal_pronouns">Formal <br>pronouns</label>
                     <input type="checkbox" name="formal_pronouns" id="formal_pronouns" value="1">
-                </span>
+                </div>
             </div>
         </div>
         <div class="text-areas">
-            <textarea name="user_input" onkeydown="handleKeyDown(event)" placeholder="Press Ctrl + Enter to submit" autofocus>{{ user_input }}</textarea>
+            <textarea name="user_input" class="input-textarea" onkeydown="handleKeyDown(event)" placeholder="Press Ctrl + Enter to submit" autofocus>{{ user_input }}</textarea>
             <textarea name="user_output" id="user_output">{{ response }}</textarea>
         </div>
+        <input type="submit" value="Submit" id="mobile-submit" style="display: none;">
         <footer></footer>
     </form>
     <script src="{{ url_for('static', filename='js/updateFormalPronounsVisibility.js') }}"></script>

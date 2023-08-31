@@ -40,22 +40,17 @@ form {
   margin-bottom: 20px;
 }
 
-.lang-selection div:first-child {
-  flex-basis: 50%;  /* Assigning 50% width to the first child */
-}
-
-.lang-selection div:last-child {
-  flex-basis: 50%;  /* Assigning 50% width to the second child */
-  padding-left: 20px;
-}
-
 select {
   background-color: #333;
   color: #fff;
   border: none;
   padding: 5px 10px;
   cursor: pointer;
-  margin-right: 10px;
+  margin-right: 5px;
+} 
+
+input[type="checkbox"] {
+  transform: scale(1.5);
 }
 
 select:focus {
@@ -92,6 +87,10 @@ footer {
   display: none;
 }
 
+label[for="formal_pronouns"] br {
+  display: none;
+}
+
 /* Mobile styles */
 @media only screen and (max-width: 768px) {
   /* Stack text areas vertically */
@@ -100,15 +99,29 @@ footer {
     height: auto;
   }
 
-  /* Make the language selection stack vertically */
   .lang-selection {
-    flex-direction: column;
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
   }
 
   .lang-selection div {
-    flex-basis: 100%;
-    padding-left: 0;
-    margin-bottom: 10px;
+    flex-grow: 0;
+  }
+
+  .lang-selection div:last-child {
+    display: flex;
+    align-items: center;
+  }
+
+  #formal_pronouns_container {
+    display: flex;
+    align-items: center;
+    margin-left: 10px;
+  }
+
+  label[for="formal_pronouns"] br {
+    display: inline;
   }
 
   /* Add a submit button for mobile devices */
@@ -132,12 +145,13 @@ footer {
 
   /* Adjust the header for smaller screens */
   header {
+    padding: 10px 0;
     flex-direction: column;
     text-align: center;
   }
 
   #logo {
-    margin: 10px auto;
+    margin: 2px auto;
   }
 
   /* Adjust text area size */
@@ -149,8 +163,12 @@ footer {
   form {
     width: 95%;
   }
-  
+
   #mobile-submit {
     display: block;
+  }
+
+  .input-textarea::placeholder {
+    color: transparent;
   }
 }
