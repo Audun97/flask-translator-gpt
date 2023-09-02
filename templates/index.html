@@ -32,10 +32,12 @@
             </div>
             <div class="text-areas">
                 <div class="text-area-container">
-                    <textarea name="user_input" class="input-textarea" onkeydown="handleKeyDown(event)" placeholder="Press Ctrl + Enter to submit" autofocus>{{ user_input }}</textarea>
+                    <div class="relative-container">
+                        <textarea name="user_input" onkeydown="handleKeyDown(event)" placeholder="Press Ctrl + Enter to submit" autofocus>{{ user_input }}</textarea>
+                        <button id="clear_text" class="x-button">X</button>
+                    </div>
                     <div>
                         <button id="copy_text_input">Copy</button>
-                        <button id="clear_text">X</button>
                     </div>
                 </div>
                 <div class="text-area-container">

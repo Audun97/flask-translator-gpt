@@ -38,6 +38,7 @@ form {
   display: flex;
   align-items: flex-start;  /* Adjusted to flex-start */
   margin-bottom: 20px;
+  padding: 10px;
 }
 
 select {
@@ -64,22 +65,22 @@ select:focus {
 .text-areas {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 3vh;
 }
 
 .text-area-container {
   display: grid;
   grid-template-rows: 1fr 1fr;
+  padding: 10px;
 }
 
 textarea {
+  width: 100%;
   height: 45vh;
-  padding: 10px;
   background-color: #333;
   color: #fff;
   border: none;
   resize: none;
-  font-size: 18px;
+  font-size: 20px;
   overflow: auto;
 }
 
@@ -98,6 +99,24 @@ label[for="formal_pronouns"] br {
 
 #mobile-submit {
   display: none;
+}
+
+.relative-container {
+  position: relative;
+}
+
+.x-button {
+  position: absolute;
+  top: 0;
+  right: 0;
+  /* Adjust the button's appearance as needed */
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  display: none; /* Hide by default */
+  color: #fff;
+  padding: 5px;
+  font-size: 20px;
 }
 
 /* Mobile styles */
@@ -149,11 +168,6 @@ label[for="formal_pronouns"] br {
     margin: 2px auto;
   }
 
-  /* Adjust text area size */
-  textarea {
-    font-size: 16px;
-  }
-
   /* Adjust form width for better spacing */
   form {
     width: 95%;
@@ -165,5 +179,9 @@ label[for="formal_pronouns"] br {
 
   .input-textarea::placeholder {
     color: transparent;
+  }
+
+  .x-button {
+    display: block; /* Show on smaller screens */
   }
 }
