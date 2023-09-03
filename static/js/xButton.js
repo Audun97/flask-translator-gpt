@@ -8,3 +8,9 @@ textarea.addEventListener('input', () => {
         xButton.style.display = 'none';
     }
 });
+
+xButton.addEventListener('click', () => {
+    event.preventDefault();
+    textarea.value = '';
+    textarea.focus();
+});
