@@ -150,6 +150,11 @@ input[type="checkbox"] {
     margin-top: 5vh;
   }
 
+  .lang-selection {
+    display: flex;
+    align-items: flex-start;  
+  }
+
   #formal_pronouns_container {
     display: flex;
     align-items: center;
