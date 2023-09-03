@@ -87,7 +87,7 @@ textarea:focus {
 }
 
 footer {
-  height: 3vh;  
+  height: 3vh;
   background-color: #222;
 }
 
@@ -194,5 +194,9 @@ input[type="checkbox"] {
 
   .input-textarea::placeholder {
     color: transparent;
+  }
+
+  .input-textarea {
+    padding-right: 25px;
   }
 }
