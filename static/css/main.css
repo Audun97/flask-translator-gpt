@@ -38,7 +38,6 @@ form {
   display: flex;
   align-items: flex-start;  /* Adjusted to flex-start */
   margin-bottom: 20px;
-  padding: 10px;
 }
 
 select {
@@ -47,7 +46,6 @@ select {
   border: none;
   padding: 5px 10px;
   cursor: pointer;
-  margin-right: 5px;
 } 
 
 input[type="checkbox"] {
@@ -70,7 +68,6 @@ select:focus {
 .text-area-container {
   display: grid;
   grid-template-rows: 1fr 1fr;
-  padding: 10px;
 }
 
 textarea {
@@ -82,6 +79,7 @@ textarea {
   resize: none;
   font-size: 20px;
   overflow: auto;
+  padding: 0px;
 }
 
 textarea:focus {
@@ -127,25 +125,9 @@ label[for="formal_pronouns"] br {
     height: auto;
   }
 
-  .lang-selection {
-    display: flex;
-    flex-wrap: nowrap;
-    align-items: center;
-  }
-
-  .lang-selection div {
-    flex-grow: 0;
-  }
-
-  .lang-selection div:last-child {
-    display: flex;
-    align-items: center;
-  }
-
   #formal_pronouns_container {
     display: flex;
     align-items: center;
-    margin-left: 10px;
   }
 
   label[for="formal_pronouns"] br {
