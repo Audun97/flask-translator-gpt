@@ -61,6 +61,7 @@ select:focus {
 .text-areas {
   display: grid;
   grid-template-columns: 1fr 1fr;
+  gap: 2vh;
 }
 
 .text-area-container {
@@ -138,6 +139,12 @@ input[type="checkbox"] {
   display: none;
 }
 
+@media only screen and (min-width: 769px) {
+  #clear_text {
+    display: none !important;
+  }
+}
+
 /* Mobile styles */
 @media only screen and (max-width: 768px) {
   /* Stack text areas vertically */
@@ -195,9 +202,5 @@ input[type="checkbox"] {
 
   .input-textarea {
     padding-right: 25px;
-  }
-
-  .x-button img {
-    display: block;
   }
 }

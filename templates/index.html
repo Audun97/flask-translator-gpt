@@ -34,8 +34,8 @@
                 <div class="text-area-container">
                     <div class="relative-container">
                         <textarea name="user_input" class="input-textarea" onkeydown="handleKeyDown(event)" placeholder="Press Ctrl + Enter to submit" autofocus>{{ user_input }}</textarea>
-                        <button id="clear_text" class="x-button">
-                            <img src="{{ url_for('static', filename='img/x.svg') }}" alt="Clear text">
+                        <button class="x-button">
+                            <img src="{{ url_for('static', filename='img/x.svg') }}" id="clear_text">
                         </button>
                     </div>
                 </div>
