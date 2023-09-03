@@ -31,13 +31,14 @@ h1 {
 
 form {
   width: 80%;
-  margin-top: 50px;
+  margin-top: 10vh;
 }
 
 .lang-selection {
-  display: flex;
-  align-items: flex-start;  /* Adjusted to flex-start */
+  display: inline-flex;
+  align-items: flex-start;  
   margin-bottom: 20px;
+  background-color: #333;
 }
 
 select {
@@ -46,11 +47,8 @@ select {
   border: none;
   padding: 5px 10px;
   cursor: pointer;
+  font-size: 16px;
 } 
-
-input[type="checkbox"] {
-  transform: scale(1.5);
-}
 
 select:focus {
   outline: none;
@@ -95,6 +93,23 @@ label[for="formal_pronouns"] br {
   display: none;
 }
 
+label[for="formal_pronouns"] {
+  font-size: 16px;
+  margin-right: 5px;
+}
+
+#formal_pronouns_container {
+  padding: 5px 5px 5px 10px;
+}
+
+input[type="checkbox"] {
+  border: none;
+  cursor: pointer;
+  transform: scale(1.5);
+  margin: 0px;
+  vertical-align: middle;
+}
+
 #mobile-submit {
   display: none;
 }
@@ -123,6 +138,10 @@ label[for="formal_pronouns"] br {
   .text-areas {
     grid-template-columns: 1fr;
     height: auto;
+  }
+
+  form {
+    margin-top: 5vh;
   }
 
   #formal_pronouns_container {
