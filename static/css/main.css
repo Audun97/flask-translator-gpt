@@ -122,14 +122,20 @@ input[type="checkbox"] {
   position: absolute;
   top: 0;
   right: 0;
-  /* Adjust the button's appearance as needed */
-  background-color: transparent;
   border: none;
   cursor: pointer;
-  display: none; /* Hide by default */
   color: #fff;
-  padding: 5px;
-  font-size: 20px;
+  padding: 2px;
+  margin: 0px;
+}
+
+.x-button img {
+  width: 25px;
+  height: 25px;
+}
+
+#clear_text {
+  display: none;
 }
 
 /* Mobile styles */
@@ -180,9 +186,5 @@ input[type="checkbox"] {
 
   .input-textarea::placeholder {
     color: transparent;
-  }
-
-  .x-button {
-    display: block; /* Show on smaller screens */
   }
 }

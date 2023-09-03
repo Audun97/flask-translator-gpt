@@ -34,7 +34,9 @@
                 <div class="text-area-container">
                     <div class="relative-container">
                         <textarea name="user_input" onkeydown="handleKeyDown(event)" placeholder="Press Ctrl + Enter to submit" autofocus>{{ user_input }}</textarea>
-                        <button id="clear_text" class="x-button">X</button>
+                        <button id="clear_text" class="x-button">
+                            <img src="{{ url_for('static', filename='img/x.svg') }}" alt="Clear text">
+                        </button>
                     </div>
                     <div>
                         <button id="copy_text_input">Copy</button>
@@ -55,5 +57,6 @@
     <script src="{{ url_for('static', filename='js/ctrlEnterFormSubmission.js') }}"></script>
     <script src="{{ url_for('static', filename='js/focusUserOutputFormSubmission.js') }}"></script>
     <script src="{{ url_for('static', filename='js/submitButton.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/xButtonHide.js') }}"></script>
 </body>
 </html>
