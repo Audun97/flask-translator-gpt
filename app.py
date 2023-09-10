@@ -39,7 +39,8 @@ def translator():
             ]
         ) 
         
-        # Extract the assistant's message from the response. I had to add a comment to make vscode ignore a warning that response was not a dictionary
+        # Extract the assistant's message from the response. 
+        # I had to add a comment to make vscode ignore a linting warning that response was not a dictionary
         assistant_message = response['choices'][0]['message']['content'] # type: ignore[reportGeneralTypeIssues]
 
         return render_template("index.html", response=assistant_message, user_input=user_input)
