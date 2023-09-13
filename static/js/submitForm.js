@@ -31,7 +31,7 @@ function handleKeyDown(event) {
 }
 
 // Submit form when user presses the submit button 
-document.getElementById('mobile-submit').addEventListener('click', function(event) {
+document.getElementById('submit_button').addEventListener('click', function(event) {
     event.preventDefault();
     submitForm();
 });
