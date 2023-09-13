@@ -169,7 +169,7 @@ input[type="checkbox"] {
 }
 
 .bottom_tray_button img {
-  height: 4vh;
+  height: 20px;
   width: auto;
   object-fit: contain;
 }
@@ -185,6 +185,7 @@ input[type="checkbox"] {
 
   #output_container {
     flex-grow: 1;
+    padding-bottom: 2vh;
   }
 
   .top_container {
