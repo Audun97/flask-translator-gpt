@@ -13,9 +13,10 @@ header {
   display: flex;
   align-items: center;
   width: 100%;
-  padding: 20px 0;
+  padding: 3vh 0;
   background-color: #333;
   box-shadow: 0px 3px 10px rgba(0,0,0,0.3);
+  height: 8vh;
 }
 
 #logo {
@@ -37,7 +38,7 @@ form {
 .lang-selection {
   display: inline-flex;
   align-items: flex-start;  
-  margin-bottom: 20px;
+  margin-bottom: 2vh;
   background-color: #333;
 }
 
@@ -66,7 +67,7 @@ select:focus {
 
 .text-area-container {
   display: grid;
-  grid-template-rows: 1fr 1fr;
+  grid-template-rows: 1fr auto;
 }
 
 textarea {
@@ -88,6 +89,7 @@ textarea:focus {
 
 .input-textarea {
   padding-right: 25px;
+  height: 100%;
 }
 
 footer {
@@ -116,10 +118,6 @@ input[type="checkbox"] {
   vertical-align: middle;
 }
 
-#mobile-submit {
-  display: none;
-}
-
 .relative-container {
   position: relative;
 }
@@ -139,8 +137,44 @@ input[type="checkbox"] {
 .x-button img {
   width: 25px;
   height: 25px;
-  filter: brightness(0) invert(1);
   display: none;
+}
+
+.bottom_tray {
+  background-color: #333;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  border-top: 0.3vh solid #999;
+  position: relative;
+}
+
+.submit-button-wrapper {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.bottom_tray_button {
+  background-color: #333;
+  color: #fff;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+  font-size: 20px;
+  display: inline-block;
+  vertical-align: middle;
+  height: 35px;
+}
+
+.bottom_tray_button:hover {
+  background-color: #444;
+}
+
+.bottom_tray_button img {
+  height: 4vh;
+  width: auto;
+  object-fit: contain;
 }
 
 /* Mobile styles */
@@ -151,13 +185,23 @@ input[type="checkbox"] {
     height: auto;
   }
 
+  .text-area-container {
+    height: 37vh;
+  }
+
+  .relative-container,
+  .text-area-container textarea {
+    height: 100%;
+  }
+
   form {
-    margin-top: 5vh;
+    margin-top: 2vh;
+    width: 95%;
   }
 
   .lang-selection {
     display: flex;
-    align-items: flex-start;  
+    align-items: flex-start;
   }
 
   #formal_pronouns_container {
@@ -169,29 +213,19 @@ input[type="checkbox"] {
     display: inline;
   }
 
-
   form::after:hover {
     background-color: #444;
   }
 
   /* Adjust the header for smaller screens */
   header {
-    padding: 10px 0;
+    padding: 1vh 0;
     flex-direction: column;
     text-align: center;
   }
 
   #logo {
-    margin: 2px auto;
-  }
-
-  /* Adjust form width for better spacing */
-  form {
-    width: 95%;
-  }
-
-  #mobile-submit {
-    display: block;
+    margin: 0.5vh auto;
   }
 
   .input-textarea::placeholder {

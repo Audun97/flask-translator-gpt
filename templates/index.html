@@ -38,15 +38,24 @@
                             <img src="{{ url_for('static', filename='img/x.svg') }}" id="clear_text">
                         </button>
                     </div>
+                    <div class="bottom_tray">
+                        <div class="submit-button-wrapper">
+                            <button class="bottom_tray_button" id="submit_button">Submit</button>
+                        </div>
+                        <button class="bottom_tray_button">
+                            <img src="{{ url_for('static', filename='img/paste.svg') }}" id="paste_text">
+                        </button>
+                    </div>
                 </div>
                 <div class="text-area-container">
                     <textarea name="user_output" id="user_output">{{ response }}</textarea>
-                    <div>
-                        <button id="copy_text_output">Copy</button>
+                    <div class="bottom_tray">
+                        <button class="bottom_tray_button">
+                            <img src="{{ url_for('static', filename='img/copy.svg') }}" id="copy_text">
+                        </button>
                     </div>
                 </div>
             </div>
-            <input type="submit" value="Submit" id="mobile-submit">
         </div>
         <footer></footer>
     </form>
