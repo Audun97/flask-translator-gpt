@@ -7,6 +7,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
+  height: 100vh
 }
 
 header {
@@ -16,12 +17,12 @@ header {
   padding: 3vh 0;
   background-color: #333;
   box-shadow: 0px 3px 10px rgba(0,0,0,0.3);
-  height: 8vh;
+  height: 50px;
 }
 
 #logo {
-  width: 50px;
-  height: 50px;
+  width: 45px;
+  height: 45px;
   margin-right: 20px;
   margin-left: 20px;
 }
@@ -32,7 +33,8 @@ h1 {
 
 form {
   width: 80%;
-  margin-top: 10vh;
+  padding-top: 10vh;
+  height: 100%;
 }
 
 .lang-selection {
@@ -90,11 +92,6 @@ textarea:focus {
 .input-textarea {
   padding-right: 25px;
   height: 100%;
-}
-
-footer {
-  height: 3vh;
-  background-color: #222;
 }
 
 label[for="formal_pronouns"] br {
@@ -179,14 +176,19 @@ input[type="checkbox"] {
 
 /* Mobile styles */
 @media only screen and (max-width: 768px) {
-  /* Stack text areas vertically */
+
   .text-areas {
-    grid-template-columns: 1fr;
-    height: auto;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
   }
 
-  .text-area-container {
-    height: 37vh;
+  #output_container {
+    flex-grow: 1;
+  }
+
+  .top_container {
+    height: calc(100vh - 140px);
   }
 
   .relative-container,
@@ -195,7 +197,7 @@ input[type="checkbox"] {
   }
 
   form {
-    margin-top: 2vh;
+    padding-top: 2vh;
     width: 95%;
   }
 
@@ -230,5 +232,9 @@ input[type="checkbox"] {
 
   .input-textarea::placeholder {
     color: transparent;
+  }
+
+  .relative-container {
+    height: 120px;
   }
 }

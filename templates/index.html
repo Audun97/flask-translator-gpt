@@ -47,7 +47,7 @@
                         </button>
                     </div>
                 </div>
-                <div class="text-area-container">
+                <div class="text-area-container" id="output_container">
                     <textarea name="user_output" id="user_output">{{ response }}</textarea>
                     <div class="bottom_tray">
                         <button class="bottom_tray_button">
@@ -57,7 +57,6 @@
                 </div>
             </div>
         </div>
-        <footer></footer>
     </form>
     <script src="{{ url_for('static', filename='js/updateFormalPronounsVisibility.js') }}"></script>
     <script src="{{ url_for('static', filename='js/ctrlEnterFormSubmission.js') }}"></script>
