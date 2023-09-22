@@ -53,10 +53,6 @@ select {
   font-size: 16px;
 } 
 
-select:focus {
-  outline: none;
-}
-
 .top_container {
   grid-template-rows: 1fr 1fr;
 }
