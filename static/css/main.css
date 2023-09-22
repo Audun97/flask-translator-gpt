@@ -53,6 +53,10 @@ select {
   font-size: 16px;
 } 
 
+select:hover {
+  background-color: #444;
+}
+
 .top_container {
   grid-template-rows: 1fr 1fr;
 }
