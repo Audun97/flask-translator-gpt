@@ -107,6 +107,10 @@ label[for="formal_pronouns"] {
   padding: 5px 5px 5px 10px;
 }
 
+#formal_pronouns {
+  margin-right: 5px;
+}
+
 input[type="checkbox"] {
   border: none;
   cursor: pointer;
