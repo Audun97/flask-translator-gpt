@@ -1,5 +1,4 @@
 const copyButton = document.getElementById('copy_text');
-const copyButtonImg = copyButton.querySelector('img');
 
 function copyTextToClipboard() {
     var text = document.querySelector('textarea[name="user_output"]').value;
