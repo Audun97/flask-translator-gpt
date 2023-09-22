@@ -1,6 +1,7 @@
-// Copy text from user_output textarea into clipboard when user presses the copy_text button
-document.getElementById('copy_text').addEventListener('click', function(event) {
-    event.preventDefault();
+const copyButton = document.getElementById('copy_text');
+const copyButtonImg = copyButton.querySelector('img');
+
+function copyTextToClipboard() {
     var text = document.querySelector('textarea[name="user_output"]').value;
     navigator.clipboard.writeText(text)
         .then(() => {
@@ -9,4 +10,16 @@ document.getElementById('copy_text').addEventListener('click', function(event) {
         .catch(err => {
             console.error('Failed to copy text: ', err);
         });
+}
+
+copyButton.addEventListener('click', function(event) {
+    event.preventDefault();
+    copyTextToClipboard();
+});
+
+copyButton.addEventListener('keydown', function(event) {
+    if (event.key === 'Enter') {
+        event.preventDefault();
+        copyTextToClipboard();
+    }
 });

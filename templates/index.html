@@ -42,16 +42,16 @@
                         <div class="submit-button-wrapper">
                             <button class="bottom_tray_button" id="submit_button">Submit</button>
                         </div>
-                        <button class="bottom_tray_button">
-                            <img src="{{ url_for('static', filename='img/paste.svg') }}" id="paste_text">
+                        <button class="bottom_tray_button" type="button" id="paste_text">
+                            <img src="{{ url_for('static', filename='img/paste.svg') }}">
                         </button>
                     </div>
                 </div>
                 <div class="text-area-container" id="output_container">
                     <textarea name="user_output" id="user_output">{{ response }}</textarea>
                     <div class="bottom_tray">
-                        <button class="bottom_tray_button">
-                            <img src="{{ url_for('static', filename='img/copy.svg') }}" id="copy_text">
+                        <button class="bottom_tray_button" type="button" id="copy_text">
+                            <img src="{{ url_for('static', filename='img/copy.svg') }}">
                         </button>
                     </div>
                 </div>
