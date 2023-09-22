@@ -8,7 +8,7 @@ textarea.addEventListener('input', () => {
         xButton.setAttribute('tabindex', '0'); // Make the 'x' button focusable
     } else {
         xButtonImg.style.display = 'none';
-        xButton.removeAttribute('tabindex'); // Make the 'x' button not focusable
+        xButton.setAttribute('tabindex', '-1'); // Make the 'x' button not focusable
     }
 });
 
