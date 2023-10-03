@@ -17,6 +17,9 @@ function submitForm() {
         if (!response.ok) {
             throw new Error("HTTP error " + response.status);
         }
+        // Clear the old response
+        document.getElementById('user_output').value = '';
+        
         // After the POST request is successful, start listening for updates
         var source = new EventSource("/update");
 
