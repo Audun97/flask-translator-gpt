@@ -1,7 +1,8 @@
 function submitForm() {
     // Show your loading animation here
 
-    fetch('/translate', {
+    // Make a POST request to send the data
+    fetch("/translate", {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
@@ -12,13 +13,24 @@ function submitForm() {
             output_language: document.querySelector('select[name="output_language"]').value,
             formal_pronouns: document.querySelector('input[name="formal_pronouns"]').checked ? "1" : "0"
         })
-    })
-    .then(response => response.json())
-    .then(data => {
-        // Hide your loading animation here
+    }).then(response => {
+        if (!response.ok) {
+            throw new Error("HTTP error " + response.status);
+        }
+        // After the POST request is successful, start listening for updates
+        var source = new EventSource("/update");
 
-        // Update the user_output textarea with the response
-        document.getElementById('user_output').value = data.response;
+        source.onmessage = function(event) {
+            if (event.data != 'END') {
+                // Update the user_output textarea with the response
+                document.getElementById('user_output').value += event.data;
+            } else {
+                source.close(); // Close the connection after receiving all data
+                // Hide your loading animation here
+            }
+        };
+    }).catch(function() {
+        console.log("Fetch error occurred.");
     });
 }
 
