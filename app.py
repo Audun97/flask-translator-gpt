@@ -12,7 +12,7 @@ load_dotenv()
 API_KEY = os.getenv('OPENAI_API_KEY')
 
 app = Flask(__name__)
-app.secret_key = 'your-secret-key'
+app.secret_key = os.getenv('SECRET_KEY')
 
 @app.route("/", methods=["GET"])
 def index():
@@ -55,7 +55,6 @@ def updates():
             {"role": "user", "content": user_input}
         ],
         "stream": True,
-        "max_tokens": 100,
         "temperature": 0,
     }
     response = requests.post(reqUrl, stream=True, headers=reqHeaders, json=reqBody)
